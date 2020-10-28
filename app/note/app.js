@@ -21,6 +21,12 @@ let routerApp = angular
       $scope.noteList = $scope.noteList.filter((item) => {
         return item.id !== id;
       });
-        console.log($scope.noteList,id)
+      console.log($scope.noteList, id);
+    };
+    $scope.editMission = function (id, isEditing) {
+      const note = $scope.noteList.find((item) => {
+        return item.id === id;
+      });
+      note.isEditing = !isEditing;
     };
   });

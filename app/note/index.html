@@ -18,7 +18,14 @@
     <div ng-controller="noteCtrl">
       <ul>
         <li ng-repeat="note in noteList">
-          {{note.name}} <a href="#" ng-click="removeMission(note.id)">删除</a>
+          <span ng-if="!note.isEditing"> {{note.name}} </span>
+          <input ng-if="note.isEditing" type="text" ng-model="note.name" />
+
+          <a href="#" ng-click="editMission(note.id,note.isEditing)"
+            ><span ng-if="!note.isEditing">编辑 </span>
+            <span ng-if="note.isEditing">完成 </span>
+          </a>
+          <a href="#" ng-click="removeMission(note.id)"><span> 删除 </span></a>
         </li>
       </ul>
       <input type="text" ng-model="noteName" />
