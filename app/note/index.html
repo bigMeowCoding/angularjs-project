@@ -1,0 +1,28 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <!-- apply our angular app to our site -->
+  <body ng-app="note">
+    <div ng-controller="noteCtrl">
+      <ul>
+        <li ng-repeat="note in noteList">
+          {{note.name}} <a href="#" ng-click="removeMission(note.id)">删除</a>
+        </li>
+      </ul>
+      <input type="text" ng-model="noteName" />
+      <button ng-click="addMission()">添加</button>
+    </div>
+  </body>
+</html>
