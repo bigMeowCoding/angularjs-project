@@ -3,7 +3,6 @@ angular.module("list").component("list", {
   controller: function ($http) {
     "use strict";
     $http.get("./list/list.json").then((response) => {
-      console.log(response);
       this.list = response.data.phones;
     });
     this.query = "";
