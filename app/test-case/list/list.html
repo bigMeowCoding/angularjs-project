@@ -1,3 +1,15 @@
+Search: <input ng-model="$ctrl.query" />
+<p>
+  Sort by:
+  <select ng-model="$ctrl.orderProp">
+    <option value="name">Alphabetical</option>
+    <option value="age">Newest</option>
+  </select>
+</p>
 <ul>
-  <li ng-repeat="item in $ctrl.list">{{item}}</li>
+  <li
+    ng-repeat="item in $ctrl.list | filter:$ctrl.query | orderBy:$ctrl.orderProp"
+  >
+    {{item.name}}
+  </li>
 </ul>
