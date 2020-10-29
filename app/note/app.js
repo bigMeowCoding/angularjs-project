@@ -1,7 +1,8 @@
 // app.js
-let routerApp = angular
+var routerApp = angular
   .module("note", [])
   .controller("noteCtrl", function ($scope) {
+    "use strict";
     $scope.noteName = "";
     $scope.noteList = [
       {
@@ -24,7 +25,7 @@ let routerApp = angular
       console.log($scope.noteList, id);
     };
     $scope.editMission = function (id, isEditing) {
-      const note = $scope.noteList.find((item) => {
+      var note = $scope.noteList.find((item) => {
         return item.id === id;
       });
       note.isEditing = !isEditing;
