@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html ng-app="module1">
-<head>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-  <script src="a.js"></script>
-</head>
-  <body >
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="a.js"></script>
+  </head>
+  <body>
     <!--    <div ng-view></div>-->
-
-    <div  directive>ss</div>
-
+    <div ng-controller="controller">
+      价格<input type="number" ng-model="price" /> 数量
+      <input type="number" ng-model="count" />
+      <div>{{compute()}}</div>
+      <button ng-click="login()">login</button>
+    </div>
   </body>
 </html>
