@@ -1,6 +1,29 @@
 angular
-  .module("module1", [])
-  .controller("controller", function ($scope,$timeout) {
+  .module("module1", ["ui.router"])
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider.state("home", {
+      url: "/home",
+      templateUrl: "./home.html",
+    });
+    $stateProvider
+      .state("about", {
+        url: "/about",
+        templateUrl: "./about.html",
+      })
+      .state("about.person", {
+        url: "/person",
+        template: "person",
+      })
+      .state("about.animal", {
+        url: "/animal",
+        template: "animal",
+      });
+    $stateProvider.state("contact", {
+      url: "/contact",
+      templateUrl: "./contact.html",
+    });
+  })
+  .controller("controller", function ($scope, $timeout) {
     $scope.count = 10;
     $scope.price = 5;
     $scope.compute = function () {

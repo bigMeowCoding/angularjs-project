@@ -2,19 +2,25 @@
 <html ng-app="module1">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.28/angular-ui-router.min.js"
+      integrity="sha512-2DoNBBUJq5Wr+Uhjgol+uvmHtxOgrtG1QjuDHltKMdtIiVEhujUi0eb/X21P+P0V9zgXKA/lOKCSq7wj5VYc5A=="
+      crossorigin="anonymous"
+    ></script>
     <script src="a.js"></script>
   </head>
   <body>
-    <!--    <div ng-view></div>-->
-    <div ng-controller="controller">
-      价格<input type="number" ng-model="price" /> 数量
-      <input type="number" ng-model="count" />
-      <div>{{compute()}}</div>
-      <button ng-click="login()">login</button>
-      <button ng-click="later()">
-        later
-      </button>
-      {{message}}
-    </div>
+    <ul>
+      <li>
+        <a ui-sref="about"> about </a>
+      </li>
+      <li>
+        <a ui-sref="home"> home </a>
+      </li>
+      <li>
+        <a ui-sref="contact"> contact </a>
+      </li>
+    </ul>
+  <div ui-view></div>
   </body>
 </html>
