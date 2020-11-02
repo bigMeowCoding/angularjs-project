@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="Minesweeper">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Minesweeper</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.css"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="mines-weeper-js/modules.js"></script>
+    <script src="mines-weeper-js/controller.js"></script>
+    <script src="mines-weeper-js/service.js"></script>
+    <script src="mines-weeper-js/directive.js"></script>
+  </head>
+  <body>
+    <div ng-controller="MinesweeperController">
+      <table class="minefield" border="1">
+        <tr ng-repeat="row in minefield.rows">
+          <td
+            ng-repeat="spot in row.spots"
+          >
+            <div mine-grid></div>
+          </td>
+        </tr>
+      </table>
+      <br />
+      <!--    <button class="btn btn-primary" ng-click="restart();">重新开始</button><br/><br/>-->
+      <!--    <p class="text-success" ng-show="isWinMessageVisible">-->
+      <!--        恭喜你，游戏胜利！-->
+      <!--    </p>-->
+      <!--    <p class="text-danger" ng-show="isLostMessageVisible">-->
+      <!--        很遗憾，游戏失败！-->
+      <!--    </p>-->
+    </div>
+  </body>
+</html>
