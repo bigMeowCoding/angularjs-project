@@ -1,17 +1,11 @@
-<div ng-app="form">
+<div>
+  <h1>{{$ctrl.mes+email}}</h1>
   <form name="user">
     <label>email</label
-    ><input type="email" name="email" ng-model="email" required />
+    ><input name="email" type="email" ng-model="email" required />
+    <h2>{{email}}</h2>
     <label>number</label
-    ><input
-      type="text"
-      name="numb"
-      required
-      ng-model="numb"
-      ng-pattern="[a-z]"
-      ng-maxlength="5"
-    />
-
+    ><input type="text" name="numb" required ng-model="numb" ng-maxlength="5" />
     <span ng-show="user.email.$invalid">error</span>
     <span ng-show="user.numb.$invalid">numb error</span>
     <div ng-messages="user.numb.$error">
