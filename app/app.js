@@ -6,10 +6,22 @@ var module1 = angular
         url: "/form",
         component: "loginForm",
       })
-      .state("contact", {
-        url: "/contact",
-        templateUrl: "./contact.html",
+      .state("lilei", {
+        url: "/lilei",
+        templateUrl: "lilei.html",
+        controller: "controller1",
+      })
+      .state("jack", {
+        url: "/jack",
+        templateUrl: "jack.html",
+        controller: "controller2",
       });
+  })
+  .controller("controller1", function ($scope) {
+    $scope.name = "lilei";
+  })
+  .controller("controller2", function ($scope) {
+    $scope.name = "jack";
   })
   .controller("controller", function ($scope, $timeout) {
     $scope.count = 10;
@@ -52,6 +64,7 @@ var module1 = angular
       restrict: "AE",
       templateUrl: "alert.html",
       link: function (scope, element, attrs) {
+        console.log(scope.name);
         element.bind("click", function (event) {
           var fn = $parse(attrs.alertFun);
           scope.$apply(function () {
